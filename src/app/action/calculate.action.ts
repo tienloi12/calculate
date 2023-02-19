@@ -1,8 +1,11 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
-export const  sum = createAction('[App Component] Sum')
-export const  minus = createAction('[App Component] Minus')
-export const  multiply = createAction('[App Component] Multiply')
-export const divide = createAction('[App Component] Divide')
-export const  result = createAction('[App Component] Result')
-export const  undo = createAction('[App Component] Undo')
+export const EnterKey = createAction(
+    '[Calculate] Enter Key',
+    props<{ key: string, keyType: string}>()
+)
+
+export const PrintResult = createAction(
+    '[Calculate] Result',
+    props<{ result: string}>()
+)
